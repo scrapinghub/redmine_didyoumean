@@ -64,6 +64,7 @@ run_tests() {
     TRACE=--trace
   fi
 
+  script -e -c "bundle exec rake ts:rebuild RAILS_ENV=test"
   script -e -c "bundle exec rake redmine:plugins:test NAME="$PLUGIN $VERBOSE
 }
 
